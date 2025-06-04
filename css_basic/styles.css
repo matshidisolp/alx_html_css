@@ -1,0 +1,27 @@
+/* styles.css */
+
+/* Make body a flex container, arranging children in a column */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Flex needs full viewport to work*/
+}
+
+/* Make main a flex container, arranging children in a row */
+main {
+    display: flex;
+    flex-direction: row;
+    flex: auto; /* Ensure main takes up available vertical space */
+}
+
+/* Article takes 2/3 of main's width, for vertical scrolling */
+article {
+    flex: 2;
+    overflow-y: auto;
+}
+
+/* Aside takes 1/3 of main's width, for vertical scrolling */
+aside {
+    flex: 1;
+    overflow-y: auto;
+}
