@@ -1,0 +1,220 @@
+/* CSS Reset
+    A very basic reset to normalize browser styles.
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CSS Variables
+    Define reusable colors and font sizes.
+*/
+:root {
+    --primary-text-color: #ffffff; /* White text */
+    --secondary-text-color: #cccccc; /* Lighter gray text */
+    --accent-color: #ff007f; /* Pink/red accent for button */
+    --dark-bg: #1a1a1a; /* Dark background color */
+    --light-gray-bg: #f4f4f4; /* Light background for general use */
+
+    --font-size-h1-desktop: 4.5rem; /* Large heading for desktop */
+    --font-size-h1-mobile: 2.5rem; /* Smaller heading for mobile */
+    --font-size-button: 1rem;
+    --font-size-paragraph: 1.1rem;
+    --font-size-small-text: 0.9rem;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--primary-text-color);
+    background-color: var(--dark-bg); /* Default background */
+}
+
+a {
+    color: var(--primary-text-color);
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Hero Section Styling
+    Contains the background image, header, and main hero content.
+*/
+.hero-section {
+    position: relative; /* For absolute positioning of overlay */
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Hide anything outside */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Align content to the top initially */
+    background: var(--dark-bg); /* Fallback background */
+    
+    /* Set the background image (replace with your actual image path) */
+    background-image: url('./images/hero-background.jpg'); /* This should be your full person image */
+    background-size: cover; /* Cover the entire area */
+    background-position: center top; /* Center horizontally, align to top vertically */
+    background-repeat: no-repeat;
+}
+
+/* Overlay for the background image to make text more readable */
+.hero-background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark semi-transparent overlay */
+    z-index: 0; /* Behind content */
+}
+
+/* Header Styling
+*/
+.header {
+    width: 100%;
+    max-width: 1200px; /* Max width for content */
+    padding: 20px 40px; /* Padding on sides */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* Stacks above overlay */
+    z-index: 1; /* Above the overlay */
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-text-color);
+}
+
+.logo img {
+    height: 30px; /* Adjust logo size */
+    margin-right: 10px;
+}
+
+/* Desktop Navigation Menu */
+.nav-menu ul {
+    display: flex;
+    gap: 30px; /* Space between nav items */
+}
+
+.nav-menu a {
+    font-size: var(--font-size-small-text);
+    text-transform: uppercase;
+}
+
+/* Hamburger menu icon - hidden on desktop */
+.menu-icon {
+    display: none; /* Hide by default */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+    margin-right: 20px; /* Space from logo */
+}
+
+.menu-icon span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-text-color);
+    border-radius: 2px;
+}
+
+
+/* Hero Content Styling
+    Contains headline, button, and paragraph
+*/
+.hero-content {
+    position: relative; /* Stacks above overlay */
+    z-index: 1; /* Above the overlay */
+    text-align: center;
+    max-width: 800px; /* Constrain content width */
+    padding: 0 20px;
+    margin-top: 100px; /* Space from header */
+    flex-grow: 1; /* Allow content to push footer down if needed */
+    display: flex; /* For centering items */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Vertically center within available space */
+}
+
+.hero-content h1 {
+    font-size: var(--font-size-h1-desktop);
+    font-weight: bold;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.hero-content p {
+    font-size: var(--font-size-paragraph);
+    color: var(--secondary-text-color);
+    margin-top: 20px; /* Space from button */
+    line-height: 1.5;
+    max-width: 600px; /* Limit paragraph width */
+}
+
+.call-to-action {
+    background-color: var(--accent-color);
+    color: var(--primary-text-color);
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px; /* Pill shape */
+    font-size: var(--font-size-button);
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.call-to-action:hover {
+    background-color: #d8006d; /* Darker pink on hover */
+}
+
+
+/* Responsive Design for Mobile
+*/
+@media (max-width: 768px) {
+    .header {
+        padding: 20px; /* Adjust padding for smaller screens */
+    }
+
+    .nav-menu {
+        display: none; /* Hide desktop nav on mobile */
+    }
+
+    .menu-icon {
+        display: flex; /* Show hamburger menu on mobile */
+    }
+
+    .hero-content {
+        margin-top: 50px; /* Less space from header on mobile */
+        padding: 0 15px;
+    }
+
+    .hero-content h1 {
+        font-size: var(--font-size-h1-mobile); /* Smaller font for mobile heading */
+    }
+
+    .hero-content p {
+        font-size: 1rem; /* Smaller paragraph font on mobile */
+    }
+}
