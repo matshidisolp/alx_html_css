@@ -1,0 +1,236 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #fff;
+  color: #333;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Hero / Header */
+.hero {
+  background: url('images/01_headphones_desktop@2x.png') no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 80px 0;
+  position: relative;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.8em;
+}
+
+.nav a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-size: 0.95em;
+}
+
+.hero-content h1 {
+  margin-top: 40px;
+  font-size: 2.5em;
+}
+
+.hero-content p {
+  margin: 20px 0;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #FF6565;
+  color: white;
+  padding: 10px 25px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+/* What we do */
+.what-we-do {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.icon-cards {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin-top: 40px;
+}
+
+.card {
+  padding: 20px;
+  background: #f2f2f2;
+  border-radius: 8px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  opacity: 0.95;
+}
+
+.card span {
+  font-size: 2.5em;
+  color: #FF6565;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Our results */
+.our-results {
+  background: url('images/01_headphones_desktop@2x.png') no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  gap: 20px;
+}
+
+.stat-box {
+  background-color: #FF6565;
+  padding: 20px;
+  border-radius: 8px;
+  width: 100px;
+  font-weight: bold;
+  animation: bounce 2s infinite;
+}
+
+.stat-box span {
+  font-size: 0.8em;
+  display: block;
+  margin-top: 5px;
+}
+
+/* Contact */
+.contact {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contact form {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact input,
+.contact textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.contact button {
+  background-color: #FF6565;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  background-color: #031e36;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+
+.footer-logo {
+  font-weight: bold;
+}
+
+.footer-icons a {
+  margin: 0 10px;
+  font-size: 1.2em;
+  color: white;
+  text-decoration: none;
+}
+
+.footer-copy {
+  font-size: 0.85em;
+  color: #ccc;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
+}
+
+@media screen and (max-width: 480px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 20px;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .nav a {
+    color: white;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+}
+
+/* Animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
